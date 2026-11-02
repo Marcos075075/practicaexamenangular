@@ -1,0 +1,24 @@
+<h1>Modificar Ubicacion Personajes</h1>
+<form createform="ngForm">
+    <label>Serie</label>
+    <select name="cajaserie" #cajaserie class="form-control" required>
+        @for (serie of series; track serie) {
+            <option [value]="serie.idSerie">
+                {{serie.nombre}}
+            </option>
+        }
+    </select>
+    <label>Personaje</label>
+    <select name="cajapersonaje" #cajapersonaje class="form-control" required (change)="mostrar()">
+        @for (personaje of personajes; track personaje) {
+            <option [value]="personaje.idPersonaje">
+                {{personaje.nombre}}
+            </option>
+        }
+    </select>
+    <button class="btn btn-info" (click)="modificarPersonaje()">Modificar personaje</button>   
+</form>
+    @if (selectedPersonaje && selectedSerie) {
+        <app-mostrar-personaje-serie-component [personaje]="selectedPersonaje" [serie]="selectedSerie"></app-mostrar-personaje-serie-component>
+    }
+    

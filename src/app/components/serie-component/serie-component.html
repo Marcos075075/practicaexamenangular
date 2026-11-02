@@ -1,0 +1,5 @@
+<h3>Serie</h3>
+<h1>{{serie.nombre}}</h1>
+<img src="{{serie.imagen}}" width="300">
+<h1>Puntuacion: {{serie.puntuacion}}</h1>
+<a [routerLink]="['/personajes', serie.idSerie]" class="btn btn-info">Ver personajes</a>

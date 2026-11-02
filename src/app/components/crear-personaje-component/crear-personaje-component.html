@@ -1,0 +1,16 @@
+<h1>Crear Personaje</h1>
+<form createform="ngForm">
+    <label>Nombre</label>
+    <input type="text" name="cajanombre" #cajanombre class="form-control" required/>
+    <label>Imagen</label>
+    <input type="text" name="cajaimagen" #cajaimagen class="form-control" required/>
+    <label>Serie</label>
+    <select name="cajaserie" #cajaserie class="form-control" required>
+        @for (serie of series; track serie) {
+            <option [value]="serie.idSerie">
+                {{serie.nombre}}
+            </option>
+        }
+    </select>
+    <button class="btn btn-primary" (click)="crearPersonaje()">Crear personaje</button>
+</form>

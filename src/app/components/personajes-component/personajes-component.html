@@ -1,0 +1,19 @@
+<h3>Reparto</h3>
+<h1>Personajes</h1>
+<h4>Conoce a los personajes de esta serie</h4>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Imagen</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (personaje of personajes; track personaje) {
+      <tr>
+        <td>{{personaje.nombre}}</td>
+        <td><img src="{{personaje.imagen}}" width="300"></td>
+      </tr>
+    }
+  </tbody>
+</table>
