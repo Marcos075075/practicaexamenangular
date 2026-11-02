@@ -1,19 +1,22 @@
-<h3>Reparto</h3>
-<h1>Personajes</h1>
-<h4>Conoce a los personajes de esta serie</h4>
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th>Nombre</th>
-      <th>Imagen</th>
-    </tr>
-  </thead>
-  <tbody>
-    @for (personaje of personajes; track personaje) {
-      <tr>
-        <td>{{personaje.nombre}}</td>
-        <td><img src="{{personaje.imagen}}" width="300"></td>
-      </tr>
-    }
-  </tbody>
-</table>
+<main class="page-shell">
+  <div class="section-heading">
+    <p class="eyebrow">Reparto</p>
+    <h1 class="mb-2">Personajes</h1>
+    <p class="text-muted mb-0">Conoce a los personajes de esta serie.</p>
+  </div>
+  <div class="surface table-responsive p-2 p-md-3">
+    <table class="table align-middle mb-0">
+      <thead>
+        <tr><th>Nombre</th><th>Imagen</th></tr>
+      </thead>
+      <tbody>
+        @for (personaje of personajes; track personaje) {
+          <tr>
+            <td class="fw-semibold">{{personaje.nombre}}</td>
+            <td><img class="character-thumb" [src]="personaje.imagen" [alt]="personaje.nombre"></td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</main>

@@ -1,16 +1,28 @@
-<h1>Crear Personaje</h1>
-<form createform="ngForm">
-    <label>Nombre</label>
-    <input type="text" name="cajanombre" #cajanombre class="form-control" required/>
-    <label>Imagen</label>
-    <input type="text" name="cajaimagen" #cajaimagen class="form-control" required/>
-    <label>Serie</label>
-    <select name="cajaserie" #cajaserie class="form-control" required>
-        @for (serie of series; track serie) {
-            <option [value]="serie.idSerie">
-                {{serie.nombre}}
-            </option>
-        }
-    </select>
-    <button class="btn btn-primary" (click)="crearPersonaje()">Crear personaje</button>
-</form>
+<main class="page-shell">
+  <section class="form-card surface">
+    <div class="section-heading">
+      <p class="eyebrow">Nueva incorporación</p>
+      <h1 class="mb-2">Crear personaje</h1>
+      <p class="text-muted mb-0">Añade un personaje al reparto de una serie.</p>
+    </div>
+    <form createform="ngForm">
+      <div class="mb-3">
+        <label class="form-label" for="cajanombre">Nombre</label>
+        <input id="cajanombre" type="text" name="cajanombre" #cajanombre class="form-control" placeholder="Ej. Eleven" required>
+      </div>
+      <div class="mb-3">
+        <label class="form-label" for="cajaimagen">Imagen</label>
+        <input id="cajaimagen" type="url" name="cajaimagen" #cajaimagen class="form-control" placeholder="https://..." required>
+      </div>
+      <div class="mb-4">
+        <label class="form-label" for="cajaserie">Serie</label>
+        <select id="cajaserie" name="cajaserie" #cajaserie class="form-select" required>
+          @for (serie of series; track serie) {
+            <option [value]="serie.idSerie">{{serie.nombre}}</option>
+          }
+        </select>
+      </div>
+      <button type="button" class="btn btn-primary" (click)="crearPersonaje()">Crear personaje</button>
+    </form>
+  </section>
+</main>

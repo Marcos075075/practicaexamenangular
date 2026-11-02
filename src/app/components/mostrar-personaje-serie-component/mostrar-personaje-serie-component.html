@@ -1,8 +1,20 @@
-<div>
-<img src="{{seriePersonaje.imagen}}" alt="">
-<h1>{{seriePersonaje.nombre}}</h1>
-</div>
-<div>
-    <img src="{{personajeSerie.imagen}}" alt="">
-    <h1>{{personajeSerie.nombre}}</h1>
-</div>
+<section class="comparison-card">
+  <p class="eyebrow">Vista previa</p>
+  <div class="comparison-grid">
+    <div class="comparison-item">
+      <img [src]="seriePersonaje.imagen" [alt]="seriePersonaje.nombre">
+      <div>
+        <small>Serie destino</small>
+        <h2>{{seriePersonaje.nombre}}</h2>
+      </div>
+    </div>
+    <div class="comparison-arrow" aria-hidden="true">→</div>
+    <div class="comparison-item">
+      <img [src]="personajeSerie.imagen" [alt]="personajeSerie.nombre">
+      <div>
+        <small>Personaje</small>
+        <h2>{{personajeSerie.nombre}}</h2>
+      </div>
+    </div>
+  </div>
+</section>

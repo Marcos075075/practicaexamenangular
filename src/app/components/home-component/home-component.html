@@ -1,1 +1,18 @@
-<p>home-component works!</p>
+<main class="page-shell home-page">
+  <section class="hero-card">
+    <div class="hero-copy">
+      <p class="eyebrow">Tu universo de series</p>
+      <h1>Conoce las historias detrás de tus personajes favoritos.</h1>
+      <p class="hero-description">Explora el reparto de cada serie, descubre nuevos personajes y organiza tu colección de forma sencilla.</p>
+      <div class="d-flex flex-wrap gap-3">
+        <a class="btn btn-primary btn-lg" [routerLink]="['/']">Explorar series</a>
+        <a class="btn btn-outline-dark btn-lg" [routerLink]="['/crear']">Añadir personaje</a>
+      </div>
+    </div>
+    <div class="hero-shape" aria-hidden="true">
+      <span>✦</span>
+      <span>✧</span>
+      <span>●</span>
+    </div>
+  </section>
+</main>

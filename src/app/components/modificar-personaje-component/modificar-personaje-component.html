@@ -1,24 +1,32 @@
-<h1>Modificar Ubicacion Personajes</h1>
-<form createform="ngForm">
-    <label>Serie</label>
-    <select name="cajaserie" #cajaserie class="form-control" required>
-        @for (serie of series; track serie) {
-            <option [value]="serie.idSerie">
-                {{serie.nombre}}
-            </option>
-        }
-    </select>
-    <label>Personaje</label>
-    <select name="cajapersonaje" #cajapersonaje class="form-control" required (change)="mostrar()">
-        @for (personaje of personajes; track personaje) {
-            <option [value]="personaje.idPersonaje">
-                {{personaje.nombre}}
-            </option>
-        }
-    </select>
-    <button class="btn btn-info" (click)="modificarPersonaje()">Modificar personaje</button>   
-</form>
-    @if (selectedPersonaje && selectedSerie) {
-        <app-mostrar-personaje-serie-component [personaje]="selectedPersonaje" [serie]="selectedSerie"></app-mostrar-personaje-serie-component>
-    }
+<main class="page-shell">
+  <section class="form-card surface">
+    <div class="section-heading">
+      <p class="eyebrow">Gestión de reparto</p>
+      <h1 class="mb-2">Mover personaje</h1>
+      <p class="text-muted mb-0">Cambia un personaje de serie y revisa el resultado antes de guardar.</p>
+    </div>
+    <form createform="ngForm">
+      <div class="mb-3">
+        <label class="form-label" for="cajaserie">Serie destino</label>
+        <select id="cajaserie" name="cajaserie" #cajaserie class="form-select" required>
+          @for (serie of series; track serie) {
+            <option [value]="serie.idSerie">{{serie.nombre}}</option>
+          }
+        </select>
+      </div>
+      <div class="mb-4">
+        <label class="form-label" for="cajapersonaje">Personaje</label>
+        <select id="cajapersonaje" name="cajapersonaje" #cajapersonaje class="form-select" required (change)="mostrar()">
+          @for (personaje of personajes; track personaje) {
+            <option [value]="personaje.idPersonaje">{{personaje.nombre}}</option>
+          }
+        </select>
+      </div>
+      <button type="button" class="btn btn-primary" (click)="modificarPersonaje()">Guardar cambio</button>
+    </form>
+  </section>
+  @if (selectedPersonaje && selectedSerie) {
+    <app-mostrar-personaje-serie-component [personaje]="selectedPersonaje" [serie]="selectedSerie"></app-mostrar-personaje-serie-component>
+  }
+</main>
     

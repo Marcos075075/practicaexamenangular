@@ -1,5 +1,11 @@
-<h3>Serie</h3>
-<h1>{{serie.nombre}}</h1>
-<img src="{{serie.imagen}}" width="300">
-<h1>Puntuacion: {{serie.puntuacion}}</h1>
-<a [routerLink]="['/personajes', serie.idSerie]" class="btn btn-info">Ver personajes</a>
+<main class="page-shell">
+  <section class="series-detail surface">
+    <img class="series-poster" [src]="serie.imagen" [alt]="serie.nombre">
+    <div>
+      <p class="eyebrow">Serie</p>
+      <h1>{{serie.nombre}}</h1>
+      <div class="rating mb-4"><span>★</span> {{serie.puntuacion}} <small>/ 10</small></div>
+      <a [routerLink]="['/personajes', serie.idSerie]" class="btn btn-primary">Ver personajes</a>
+    </div>
+  </section>
+</main>
